@@ -1,0 +1,1 @@
+//aqui se colocara las peticiones de la api (solo logica)
