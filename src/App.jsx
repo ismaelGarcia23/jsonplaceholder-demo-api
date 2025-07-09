@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Posts from './components/Posts';
 import RegisterPost from './components/RegisterPost';
+import EditPost from './components/EditPost';
+
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/new-post" element={<RegisterPost />} />
+        <Route path="/post/:postId" element={<EditPost />} />
       </Routes>
     </BrowserRouter>
   );
