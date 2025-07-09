@@ -22,7 +22,7 @@ const createPost = async (data_post) => {
   try {
     const response = await axios.post(
       "https://jsonplaceholder.typicode.com/posts",
-      data_post, // se envía como body JSON automáticamente por axios
+      data_post, 
       {
         headers: {
           'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ const createPost = async (data_post) => {
       }
     );
     console.log(response.data);
-    return response.data; // contiene el nuevo post creado
+    return response.data; 
   } catch (error) {
     console.error("Error al crear el post:", error);
     return null;
