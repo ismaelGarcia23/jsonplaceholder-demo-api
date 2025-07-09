@@ -1,40 +1,23 @@
-import React from 'react'
-import styled from 'styled-components'
-
-const Container = styled.section`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2.5rem 0;
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-`;
-
-const Title = styled.h1`
-    font-size: 2.3rem;
-    font-weight: bold;
-`
-
-const Button = styled.button`
-    border: none;
-    padding: .8rem;
-    margin: 1rem .5rem;
-    border-radius: 10px;
-    font-weight: bold;
-`
+import React from 'react';
 
 export default function Welcome() {
     return (
-        <Container>
+        <section className="flex justify-center items-center my-10 text-center font-sans">
             <section>
-                <Title>Welcome to API Placeholder</Title>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, deleniti accusamus? Fugit nemo quidem aut repudiandae ratione? Iusto, eaque incidunt.</p>
-
-                <div>
-                    <Button style={{backgroundColor: "#3D98F4", color: "#fff"}}>View Posts</Button>
-                    <Button>Create Post</Button>
+                <h1 className="text-[2.3rem] font-bold">Welcome to API Placeholder</h1>
+                <p className="mt-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, deleniti accusamus? 
+                    Fugit nemo quidem aut repudiandae ratione? Iusto, eaque incidunt.
+                </p>
+                <div className="mt-6">
+                    <button className="bg-[#3D98F4] text-white px-4 py-2 mx-2 rounded-[10px] font-bold">
+                        View Posts
+                    </button>
+                    <button className="px-4 py-2 mx-2 rounded-[10px] font-bold border border-gray-300 hover:bg-gray-100">
+                        Create Post
+                    </button>
                 </div>
             </section>
-        </Container>
-    )
+        </section>
+    );
 }

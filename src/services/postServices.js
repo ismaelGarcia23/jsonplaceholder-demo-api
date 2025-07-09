@@ -17,6 +17,27 @@ const getPosts = async () => {
 
 export { getPosts }
 
+//metodo para crear una publicacion
+const createPost = async (data_post) => {
+  try {
+    const response = await axios.post(
+      "https://jsonplaceholder.typicode.com/posts",
+      data_post, // se envía como body JSON automáticamente por axios
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    console.log(response.data);
+    return response.data; // contiene el nuevo post creado
+  } catch (error) {
+    console.error("Error al crear el post:", error);
+    return null;
+  }
+};
+
+export { createPost };
 // const obtenerPublicaciones = async () => {
 //     try{
 //         const response = await fetch("https://jsonplaceholder.typicode.com/posts", {

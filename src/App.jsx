@@ -1,55 +1,53 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-import styled from "styled-components"
-import Welcome from "./components/Welcome"
-import Posts from "./components/Posts"
-
-const HeaderContainer = styled.header`
-    display: flex;
-    justify-content: space-between;
-    padding: .5rem 2rem;
-    border-bottom: 1px solid #f0f2f5;
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
-`
-
-const TitileHeader = styled.h2`
-    font-weight: bold;
-`
-
-const ItemNav = styled.li`
-    display: inline-block;
-    margin: 0 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-`
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Welcome from './components/Welcome';
+import Posts from './components/Posts';
+import RegisterPost from './components/RegisterPost';
 
 function App() {
-
   return (
     <BrowserRouter>
-      <HeaderContainer>
-        <TitileHeader>API Placeholder</TitileHeader>
+      {/* Encabezado */}
+      <header className="flex justify-between items-center px-8 py-2 border-b border-gray-200 font-sans">
+        <h2 className="font-bold text-lg">API Placeholder</h2>
         <nav>
-            <ul>
-                <ItemNav>
-                    <Link to='/' style={{color: "#000", textDecoration: "none", marginTop: "3px"}}>Home</Link>
-                </ItemNav>
-                <ItemNav>
-                    <Link to='/posts' style={{color: "#000", textDecoration: "none"}}>Posts</Link>
-                </ItemNav>
-                <ItemNav>
-                    New Post
-                </ItemNav>
-            </ul>
+          <ul className="flex space-x-6">
+            <li>
+              <Link
+                to="/"
+                className="text-black hover:underline transition-all"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/posts"
+                className="text-black hover:underline transition-all"
+              >
+                Posts
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/new-post"
+                className="text-black hover:underline transition-all"
+              >
+                New Post
+              </Link>
+            </li>
+          </ul>
         </nav>
-      </HeaderContainer>
+      </header>
 
-      {/** creacion de rutas */}
+      {/* Rutas */}
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/new-post" element={<RegisterPost />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
